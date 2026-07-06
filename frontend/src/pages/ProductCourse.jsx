@@ -5,8 +5,13 @@ export default function ProductCourse() {
   const allCats = [{ id: 'course', label: 'Course' }, ...productCategories.map((c) => ({ id: c.id, label: c.label }))]
 
   return (
-    <div>
-      <PageBanner title="Category" img="https://picsum.photos/seed/category-banner/1200/500" />
+    <div className="bg-[#FFE9F0] min-h-screen flex flex-col">
+       {/* 1. BANNER UTAMA: Dibuat melayang di dalam kotak pembungkus */}
+          <div className="max-w-6xl mx-auto w-full px-4 pt-6">
+            <div className="rounded-[24px] overflow-hidden shadow-[0_12px_28px_rgba(0,0,0,0.25)]">
+              <PageBanner title="Category" img="/assets/judul-about.png" />
+            </div>
+          </div>
 
       <div className="sticky top-[60px] z-30 bg-white border-b border-salon-soft overflow-x-auto no-scrollbar">
         <div className="max-w-6xl mx-auto px-4 flex gap-2 py-3">

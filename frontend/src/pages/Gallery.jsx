@@ -10,8 +10,13 @@ export default function Gallery() {
     active === 'All' ? galleryItems : galleryItems.filter((g) => g.category === active)
 
   return (
-    <div>
-      <PageBanner title="Our Gallery" img="https://picsum.photos/seed/gallery-banner/1200/500" />
+    <div className="bg-[#FFE9F0] min-h-screen flex flex-col">
+        {/* 1. BANNER UTAMA: Dibuat melayang di dalam kotak pembungkus */}
+           <div className="max-w-6xl mx-auto w-full px-4 pt-6">
+              <div className="rounded-[24px] overflow-hidden shadow-[0_12px_28px_rgba(0,0,0,0.25)]">
+                <PageBanner title="Our Gallery" img="/assets/judul-about.png" />
+              </div>
+             </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
         <SectionTitle eyebrow="Our Gallery" title="Let's See Our Gallery" />

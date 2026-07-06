@@ -14,10 +14,7 @@ export const salon = {
   whatsapp: import.meta.env.VITE_SALON_WHATSAPP || '6285770594912',
   instagram: 'byernaesa',
   tiktok: 'byernaesa',
-  mapsEmbedSrc:
-    'https://www.google.com/maps/embed?pb=!3m2!1sen!2sus!4v1782566966052!5m2!1sen!2sus!6m8!1m7!1sYQIOZuUSCGqrv0ZDwSZjKg!2m2!1d-6.212029097324126!2d106.8559424644274!3f34.120480311040566!4f10.604205794308356!5f0.7820865974627469' +
-    encodeURIComponent('Jl. Manggarai Utara 2 No.11-12, Manggarai, Tebet, Jakarta Selatan') +
-    '&output=embed',
+  mapsEmbedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3117462446704!2d106.8533675757279!3d-6.222560860942544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3900609b787%3A0xb35a0980dfbe77b2!2sJl.%20Manggarai%20Utara%202%20No.11%2C%20RT.9%2FRW.1%2C%20Manggarai%2C%20Kec.%20Tebet%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012850!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid',
   shopeeUrl: '#',
   tokopediaUrl: '#',
 }
@@ -73,95 +70,259 @@ export const popularTreatments = [
   { name: 'Meni Pedi', priceFrom: 70000, img: 'https://picsum.photos/seed/menipedi/400/400' },
 ]
 
-// Service categories shared by the Service page and Price page.
+// =========================================================================
+// 1. DATA UNTUK HALAMAN SERVICE (Ada durasi & deskripsi panjang)
+// =========================================================================
 export const serviceCategories = [
   {
     id: 'nail',
     label: 'Nail',
     items: [
-      { name: 'Nail Extension + Manicure Gel Art', duration: '90 - 120 menit', price: 175000 },
-      { name: 'Manicure Gel Art', duration: '60 - 75 menit', price: 70000 },
-      { name: 'Press On Nails (Custom)', duration: '30 menit', price: 45000 },
+      { 
+        name: 'Nail Extention + Manicure Gel Art', 
+        duration: '1,5 - 2 jam', 
+        price: 175000,
+        description: 'perawatan kuku yang menggabungkan pemasangan kuku tambahan (extension), dengan manicure gel art berupa pewarnaan dan desain kuku menggunakan gel polish yang dikeringkan menggunakan sinar UV/LED sehingga hasilnya lebih mengilap, tahan lama, dan elegan.' 
+      },
+      { 
+        name: 'Manicure Gel Art', 
+        duration: '1,5 - 2 jam', 
+        price: 75000,
+        description: 'Perawatan kuku dengan manicure dan desain gel art untuk tampilan kuku lebih rapi, cantik, dan tahan lama.' 
+      },
+      { 
+        name: 'Spa Pedicure Gel Polish', 
+        duration: '1,5 - 2 jam', 
+        price: 150000,
+        description: 'Perawatan kaki dengan spa pedicure dan gel polish untuk kuku kaki lebih bersih, rapi, mengilap, dan tahan lama.' 
+      },
+      { 
+        name: 'SPA Menicure Pedicure + Callus', 
+        duration: '1,5 - 2 jam', 
+        price: 250000,
+        description: 'Perawatan tangan dan kaki lengkap dengan pembersihan kapalan (callus) agar kulit terasa lebih halus, bersih, dan terawat.' 
+      },
     ],
   },
   {
     id: 'eyelash',
     label: 'Eyelash',
     items: [
-      { name: 'Anime Lashes', duration: '60 - 75 menit', price: 175000 },
-      { name: 'Russian Volume Mink Lashes', duration: '90 - 120 menit', price: 200000 },
+      { 
+        name: 'Anime Lashes', 
+        duration: '-+ 2 jam', 
+        price: 175000,
+        description: 'Pemasangan bulu mata dengan efek anime untuk tampilan mata lebih tegas, lentik, dan berdimensi.' 
+      },
+      { 
+        name: 'Russian Volume Mink Lashes', 
+        duration: '-+ 2 jam', 
+        price: 300000,
+        description: 'Extension bulu mata dengan teknik volume untuk hasil lebih penuh, lembut, dan elegan.' 
+      },
+      { 
+        name: 'Keratin Lashlift + Tint', 
+        duration: '1,5 - 2 jam', 
+        price: 100000,
+        description: 'Treatment untuk melentikkan, menutrisi, dan memberi warna pada bulu mata agar tampak lebih tegas dan natural.' 
+      },
+      { 
+        name: 'Double Mink Lashes', 
+        duration: '1,5 - 2 jam', 
+        price: 200000,
+        description: 'Pemasangan bulu mata dengan efek lebih tebal and bervolume untuk tampilan mata lebih dramatis dan elegan.' 
+      },
     ],
   },
   {
     id: 'sulam',
     label: 'Sulam',
     items: [
-      { name: 'Sulam Bibir + Free Retouch', duration: '120 menit', price: 250000 },
-      { name: 'Sulam Alis Microblading / Shading', duration: '90 menit', price: 350000 },
+      { 
+        name: 'Sulam Bibir + Free Retouch', 
+        duration: '2 jam', 
+        price: 250000,
+        description: 'Treatment pewarnaan bibir semi permanen untuk tampilan bibir lebih segar, merata, dan cerah.' 
+      },
+      { 
+        name: 'Sulam Alis Microblading + Shading', 
+        duration: '2 jam', 
+        price: 500000,
+        description: 'Treatment membentuk alis natural dengan kombinasi goresan rambut dan shading agar terlihat lebih rapi dan simetris.' 
+      },
+      { 
+        name: 'Sulam eyeliner + free retouch', 
+        duration: '2 jam', 
+        price: 500000,
+        description: 'Treatment eyeliner semi permanen untuk mempertegas garis mata, termasuk retouch gratis agar hasil lebih maksimal.' 
+      },
+      { 
+        name: 'Retouch Sulam Alis', 
+        duration: '2 jam', 
+        price: 250000,
+        description: 'Perawatan ulang sulam alis untuk memperbaiki warna dan bentuk agar tetap rapi dan natural.' 
+      },
     ],
   },
   {
     id: 'waxing',
     label: 'Waxing',
     items: [
-      { name: 'Waxing Full Leg', duration: '30 - 45 menit', price: 90000 },
-      { name: 'Waxing Full Arm', duration: '30 menit', price: 70000 },
+      { name: 'Waxing Full Leg', duration: '30 menit', price: 90000, description: 'Perawatan menghilangkan bulu pada seluruh area kaki agar kulit terasa lebih halus dan bersih.' },
+      { name: 'Waxing Full Arm', duration: '30 menit', price: 70000, description: 'Perawatan menghilangkan bulu pada seluruh area lengan untuk hasil kulit lebih halus dan rapi.' },
+      { name: 'Waxing Half Leg ', duration: '30 menit', price: 75000, description: 'Perawatan menghilangkan bulu pada sebagian area kaki agar kulit terasa lebih halus dan bersih.' },
+      { name: 'Waxing Half Arm ', duration: '30 menit', price: 55000, description: 'Perawatan menghilangkan bulu pada sebagian area lengan untuk kulit lebih halus dan rapi.' },
     ],
   },
   {
     id: 'ipl',
     label: 'IPL',
     items: [
-      { name: 'IPL Hair Removal Full Arm', duration: '30 menit', price: 150000 },
-      { name: 'Cuci Bath / Blow', duration: '30 menit', price: 65000 },
+      { name: 'IPL Hair Removal Full Arm ', duration: '1 jam', price: 100000, description: 'Treatment pengurangan bulu pada seluruh lengan menggunakan teknologi cahaya IPL untuk hasil lebih halus dan tahan lama.' },
+      { name: 'IPL Hair Removal Full Face', duration: '1 jam', price: 100000, description: 'Perawatan mengurangi bulu halus pada area wajah dengan teknologi IPL agar kulit tampak lebih bersih dan lembut.' },
+      { name: 'IPL Hair Removal Full Leg', duration: '1 jam', price: 175000, description: 'Treatment pengurangan bulu pada seluruh kaki menggunakan teknologi IPL untuk hasil lebih halus dan tahan lama.' },
+      { name: 'IPL Hair Removal Half Arm', duration: '1 jam', price: 75000, description: 'Treatment pengurangan bulu pada sebagian area lengan menggunakan teknologi IPL agar kulit terasa lebih bersih dan halus.' },
     ],
   },
   {
     id: 'hair',
     label: 'Hair',
     items: [
-      { name: 'Hair Laser', duration: '60 menit', price: 150000 },
-      { name: 'IPL Hair Removal Full Face', duration: '30 menit', price: 100000 },
+      { name: 'Hair Laser', duration: '1 jam', price: 100000, description: 'Treatment untuk membantu merangsang pertumbuhan rambut, memperkuat akar, dan menjaga kesehatan kulit kepala agar rambut tampak lebih sehat dan tebal.' },
+      { name: 'Hair Creambath Catok/Blow', duration: '-+1 jam', price: 60000, description: 'Perawatan rambut untuk menutrisi dan melembutkan rambut melalui creambath, dilengkapi styling catok atau blow agar rambut tampak lebih rapi, halus, dan indah.' },
+      { name: 'Hair Keratin Treatment', duration: '1 jam', price: 250000, description: 'Perawatan rambut dengan keratin untuk membantu menutrisi, mengurangi kusut, dan membuat rambut lebih halus serta berkilau.' },
+      { name: 'Hair Smoothing ', duration: '1 jam', price: 200000, description: 'Treatment untuk membuat rambut tampak lebih lurus, lembut, rapi, dan mudah diatur.' },
     ],
   },
   {
     id: 'underarm',
     label: 'Underarm',
     items: [
-      { name: 'Glow Armpit', duration: '45 menit', price: 150000 },
-      { name: 'Waxing Underarm', duration: '15 menit', price: 45000 },
+      { name: 'Glow Armpit', duration: '1 - 1,5 jam', price: 150000, description: 'Treatment yang dilakukan dengan meamsukkan warna ke dalam kulit ketiak, sehingga ketiak cerah dan naik 1-2 tingkat dari tone awal dengan glowing armpit' },
+      { name: 'Waxing Underarm', duration: '30 menit', price: 45000, description: 'Perawatan menghilangkan bulu area underarm agar kulit terasa lebih bersih, halus, dan rapi.' },
     ],
   },
   {
     id: 'face',
     label: 'Face Treatment',
     items: [
-      { name: 'Facial Brightening / Acne', duration: '60 menit', price: 100000 },
-      { name: 'MTS Acne / Pori Besar', duration: '60 menit', price: 100000 },
+      { name: 'Facial Brightening/Acne', duration: '1 jam', price: 100000, description: 'Perawatan wajah untuk membantu mencerahkan kulit serta mengatasi masalah jerawat agar wajah tampak lebih sehat.' },
+      { name: 'MTS Acne / Pori Besar', duration: '1 - 1,5 jam', price: 300000, description: 'Treatment untuk membantu mengurangi bekas jerawat, mengecilkan tampilan pori, dan memperbaiki tekstur kulit.' },
+    ],
+  },
+  {
+    id: 'tato',
+    label: 'Tato & Tindidk',
+    items: [
+      { name: 'Small Tato Sulam', duration: '-+ 2 jam', price: 200000, description: 'Layanan pembuatan tato kecil berupa tulisan atau desain sederhana untuk tampilan lebih estetik dan personal. Tahan -+ 1 tahun' },
+      { name: 'Tindik Telinga / Piercing', duration: '-+ 1 jam', price: 100000, description: 'Layanan pemasangan tindik pada telinga atau area tertentu dengan proses aman dan rapi.' },
+    ],
+  },
+]
+
+// =========================================================================
+// ⭐️ NEW: 2. DATA KHUSUS UNTUK HALAMAN PRICE (Bisa diedit bebas tanpa merusak halaman Service)
+// =========================================================================
+export const priceCategories = [
+  {
+    id: 'nail',
+    label: 'Nail',
+    items: [
+      { name: 'Nail Extention + Manicure Gel Art', price: 175000 },
+      { name: 'Manicure Gel Art', price: 75000 },
+      { name: 'Spa Pedicure Gel Polish', price: 150000 },
+      { name: 'SPA Menicure Pedicure + Callus', price: 250000 },
+      // Silakan tambah menu khusus pricelist halaman Price disini...
+    ],
+  },
+  {
+    id: 'eyelash',
+    label: 'Eyelash',
+    items: [
+      { name: 'Anime Lashes', price: 175000 },
+      { name: 'Russian Volume Mink Lashes', price: 300000 },
+      { name: 'Keratin Lashlift + Tint', price: 100000 },
+      { name: 'Double Mink Lashes', price: 200000 },
+    ],
+  },
+  {
+    id: 'sulam',
+    label: 'Sulam',
+    items: [
+      { name: 'Sulam Bibir + Free Retouch', price: 250000 },
+      { name: 'Sulam Alis Microblading + Shading', price: 500000 },
+      { name: 'Sulam eyeliner + free retouch', price: 500000 },
+      { name: 'Retouch Sulam Alis', price: 250000 },
+    ],
+  },
+  {
+    id: 'waxing',
+    label: 'Waxing',
+    items: [
+      { name: 'Waxing Full Leg', price: 90000 },
+      { name: 'Waxing Full Arm', price: 70000 },
+      { name: 'Waxing Half Leg', price: 75000 },
+      { name: 'Waxing Half Arm', price: 55000 },
+    ],
+  },
+  {
+    id: 'ipl',
+    label: 'IPL',
+    items: [
+      { name: 'IPL Hair Removal Full Arm', price: 100000 },
+      { name: 'IPL Hair Removal Full Face', price: 100000 },
+      { name: 'IPL Hair Removal Full Leg', price: 175000 },
+      { name: 'IPL Hair Removal Half Arm', price: 75000 },
+    ],
+  },
+  {
+    id: 'hair',
+    label: 'Hair',
+    items: [
+      { name: 'Hair Laser', price: 100000 },
+      { name: 'Hair Creambath Catok/Blow', price: 60000 },
+      { name: 'Hair Keratin Treatment', price: 250000 },
+      { name: 'Hair Smoothing', price: 200000 },
+    ],
+  },
+  {
+    id: 'underarm',
+    label: 'Underarm',
+    items: [
+      { name: 'Glow Armpit', price: 150000 },
+      { name: 'Waxing Underarm', price: 45000 },
+    ],
+  },
+  {
+    id: 'face',
+    label: 'Face Treatment',
+    items: [
+      { name: 'Facial Brightening/Acne', price: 100000 },
+      { name: 'MTS Acne / Pori Besar', price: 300000 },
     ],
   },
   {
     id: 'tato',
     label: 'Tato & Tindik',
     items: [
-      { name: 'Small Tato Sulam', duration: '60 menit', price: 200000 },
-      { name: 'Tindik Telinga / Piercing', duration: '15 menit', price: 100000 },
+      { name: 'Small Tato Sulam', price: 200000 },
+      { name: 'Tindik Telinga / Piercing', price: 100000 },
     ],
   },
 ]
 
 export const promos = [
   {
-    title: 'Diskon 10% New Customer',
-    desc: 'Khusus pelanggan baru, booking via website + tunjukkan bukti follow Instagram.',
-    img: 'https://picsum.photos/seed/promo1/400/300',
+    title: "Promo Diskon 10%",
+    desc: "Maksimal discount 50rb...",
+    img: "/assets/promo-utama.png"
   },
   {
-    title: 'Paket Hemat Eyelash + Sulam Alis',
-    desc: 'Bundling dua treatment favorit dengan harga lebih ringan, periode terbatas.',
-    img: 'https://picsum.photos/seed/promo2/400/300',
-  },
-]
+    title: "Pricelist Promo Perawatan",
+    desc: "Daftar harga promo khusus...",
+    img: "/assets/promo-kedua.png"
+  }
+];
 
 export const galleryCategories = ['All', 'Eyelash', 'Sulam', 'Nail', 'Tato', 'Face Treatment']
 
@@ -235,8 +396,6 @@ export function formatRupiah(value) {
   return 'Rp' + Number(value).toLocaleString('id-ID')
 }
 
-// Turns an arbitrary string (e.g. a treatment name with "/" or "+") into a
-// URL-path-safe slug, for use as a picsum.photos seed.
 export function slugify(value) {
   return value
     .toLowerCase()

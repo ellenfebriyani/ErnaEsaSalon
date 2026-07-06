@@ -4,8 +4,13 @@ import { salon } from '../data/siteData.js'
 
 export default function Contact() {
   return (
-    <div>
-      <PageBanner title="Contact Us" img="https://picsum.photos/seed/contact-banner/1200/500" />
+    <div className="bg-[#FFE9F0] min-h-screen flex flex-col">
+          {/* 1. BANNER UTAMA: Dibuat melayang di dalam kotak pembungkus */}
+              <div className="max-w-6xl mx-auto w-full px-4 pt-6">
+                <div className="rounded-[24px] overflow-hidden shadow-[0_12px_28px_rgba(0,0,0,0.25)]">
+                  <PageBanner title="Contact Us" img="/assets/judul-about.png" />
+                </div>
+              </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-4 mb-8">

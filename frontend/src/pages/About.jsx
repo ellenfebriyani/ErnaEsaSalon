@@ -3,12 +3,12 @@ import { salon } from '../data/siteData.js'
 
 export default function About() {
   return (
-    <div className="bg-[#FFF1F5] min-h-screen flex flex-col">
+    <div className="bg-[#FFE9F0] min-h-screen flex flex-col">
       
       {/* 1. BANNER UTAMA: Dibuat melayang di dalam kotak pembungkus */}
       <div className="max-w-6xl mx-auto w-full px-4 pt-6">
         <div className="rounded-[24px] overflow-hidden shadow-[0_12px_28px_rgba(0,0,0,0.25)]">
-          <PageBanner title="About Us" img="https://picsum.photos/seed/about-banner/1200/500" />
+          <PageBanner title="About Us" img="/assets/judul-about.png" />
         </div>
       </div>
 
@@ -21,12 +21,12 @@ export default function About() {
           {/* Baris Atas: Dua Foto Berdampingan dengan Sudut Kustom */}
           <div className="grid grid-cols-2 gap-3">
             <img
-              src="https://picsum.photos/seed/about-1/250/300"
+              src="/assets/about1.png"
               alt="Treatment Kuku"
               className="rounded-tl-[50px] rounded-tr-none rounded-bl-[20px] rounded-br-none border-4 border-white shadow-xl w-full h-20 md:h-60 object-cover bg-white"
             />
             <img
-              src="https://picsum.photos/seed/about-2/250/300"
+              src="/assets/about2.png"
               alt="Ruang Tunggu Salon"
               className="rounded-tl-none rounded-tr-[50px] rounded-bl-none rounded-br-[20px] border-4 border-white shadow-xl w-full h-20 md:h-60 object-cover bg-white"
             />
@@ -35,13 +35,13 @@ export default function About() {
           {/* Baris Bawah: Foto Plang Nama Salon Melebar */}
           <div className="relative">
             <img
-              src="https://picsum.photos/seed/about-3/500/250"
+              src="/assets/about3.png"
               alt="Plang Erna Esa Studio"
-              className="rounded-[20px] border-4 border-white shadow-xl w-full h-36 md:h-40 object-cover bg-white"
+              className="rounded-[20px] border-4 border-white shadow-xl w-full h-36 md:h-60 object-cover bg-white"
             />
             
             {/* Ornamen Bunga di Samping/Sudut Kanan Bawah Foto */}
-            <div className="absolute -right-11 -bottom-6 w-30 md:w-28 h-30 md:h-28 z-10 pointer-events-none">
+            <div className="absolute -right-9 -bottom-6 w-30 md:w-28 h-40 md:h-38 z-10 pointer-events-none">
               <img 
                 src="/assets/ornamen-bunga.png" 
                 alt="Flower Ornament" 
