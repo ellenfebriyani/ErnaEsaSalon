@@ -351,17 +351,30 @@ export const galleryItems = [
 export const courseItems = [
   {
     name: 'Eyelash Extension Private Course',
-    price: 1500000,
+    price: 'IDR 1.500.000',
     features: [
-      '1 set primer',
-      'Eyelash trolley',
-      'Free snack',
-      'Free model',
-      'Free handout modul eyelash private course',
-      'Free sertifikat',
+      '2 hari private',
+      'materinya lengkap',
+      'free snack',
+      'free model',
+      'free konsultasi setelah proses private selesai',
+      'free sertifikat',
     ],
-    img: 'https://picsum.photos/seed/course-1/400/300',
+    img: "/assets/course-eyelash.png",
   },
+  {
+    name: 'Korean Eyebrow Embroidery Course',
+    price: 'IDR 5.000.000',
+    features: [
+      '2 hari private',
+      'materinya lengkap',
+      'free snack',
+      'free model',
+      'free konsultasi setelah proses private selesai',
+      'free sertifikat',
+    ],
+    img: "/assets/course-eyebrow.png", 
+  }
 ]
 
 export const productCategories = [
