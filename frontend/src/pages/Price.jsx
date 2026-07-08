@@ -1,23 +1,23 @@
 import { useState } from 'react'
 import PageBanner from '../components/PageBanner.jsx'
-import { serviceCategories, promos, formatRupiah } from '../data/siteData.js'
+import { priceCategories, promos, formatRupiah } from '../data/siteData.js'
 
 export default function Price() {
-  // State untuk mengatur indeks kategori aktif (Slider)
+  // State untuk mengatur indeks kategori aktif (Slider) menggunakan priceCategories
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Fungsi navigasi ke kategori sebelumnya
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? serviceCategories.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? priceCategories.length - 1 : prev - 1));
   };
 
   // Fungsi navigasi ke kategori berikutnya
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === serviceCategories.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === priceCategories.length - 1 ? 0 : prev + 1));
   };
 
-  // Kategori aktif saat ini
-  const currentCat = serviceCategories[currentIndex];
+  // Kategori aktif saat ini diambil dari data priceCategories
+  const currentCat = priceCategories[currentIndex];
 
   return (
     <div className="bg-[#FFE9F0] min-h-screen flex flex-col">
@@ -28,9 +28,8 @@ export default function Price() {
         </div>
       </div>
 
-      {/* 2. DAFTAR HARGA SINGLE CARD SLIDER (Lebar presisi sama dengan Banner Utama) */}
+      {/* 2. DAFTAR HARGA SINGLE CARD SLIDER */}
       <div className="max-w-6xl mx-auto w-full px-4 py-12">
-        {/* Kontainer Utama dengan posisi relatif agar panah di dalam bisa diposisikan secara absolut */}
         <div className="relative w-full bg-[#FFB8CA] rounded-0 overflow-hidden shadow-lg grid grid-cols-1 md:grid-cols-2">
           
           {/* ================= PANAH NAVIGASI DI SAMPING GAMBAR & TULISAN ================= */}
@@ -45,7 +44,7 @@ export default function Price() {
             </svg>
           </button>
 
-          {/* Panah Ranan */}
+          {/* Panah Kanan */}
           <button 
             onClick={nextSlide}
             className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 text-[#C84870] hover:scale-110 transition-transform bg-white/60 p-1.5 rounded-full backdrop-blur-sm md:bg-transparent md:p-0"
@@ -56,16 +55,12 @@ export default function Price() {
             </svg>
           </button>
 
-
           {/* ================= ISI KONTEN CARD (ZIG-ZAG GRID) ================= */}
           
           {/* BLOK 1: FOTO KIRI ATAS */}
-          {/* md:pl-12 membuat foto bergeser ke kanan (memberi ruang untuk panah kiri) */}
-          {/* md:pt-6 membuat foto agak ke bawah agar proporsional */}
-          <div className="w-full h-[300px] md:h-[450px] p-6 md:pt-6 md:pb-0 md:pr-0 md:pl-12">
+          <div className="w-full h-[350px] md:h-[480px] p-6 md:pt-6 md:pb-0 md:pr-0 md:pl-12">
             <img 
-              src={`/assets/treatments/${currentCat.id}-banner1.png`}
-              onError={(e) => { e.target.src = 'https://picsum.photos/seed/nail1/600/500' }}
+              src={`/assets/price/${currentCat.id}-banner1.png`}
               alt={`${currentCat.label} 1`} 
               className="w-full h-full object-cover"
             />
@@ -75,9 +70,9 @@ export default function Price() {
           <div className="p-8 md:p-12 md:px-20 flex flex-col justify-center">
             <h3 className="font-['Cormorant_Garamond'] font-bold uppercase text-[18px] md:text-[22px] tracking-wider mb-6 text-gray-950">
               Pricelist for {currentCat.label}
-            </h3>
+              </h3>
             <ul className="space-y-4 max-w-[85%] md:max-w-full">
-              {currentCat.items.slice(0, 6).map((item) => (
+              {currentCat.items.slice(0, currentCat.splitAfter || 6).map((item) => (
                 <li key={item.name} className="flex justify-between items-end text-[13px] md:text-[14px] text-gray-900 font-['Poppins']">
                   <span className="pr-1 leading-tight max-w-[70%]">{item.name}</span>
                   <span className="flex-1 border-b border-gray-800/60 mx-1 mb-1"></span>
@@ -87,13 +82,13 @@ export default function Price() {
             </ul>
           </div>
 
-          {/* BLOK 2: TULISAN KIRI BAWAH (order-2 di mobile agar runtut) */}
+          {/* BLOK 2: TULISAN KIRI BAWAH */}
           <div className="p-8 md:p-12 md:px-20 flex flex-col justify-center order-2 md:order-1">
             <h3 className="font-['Cormorant_Garamond'] font-bold uppercase text-[18px] md:text-[22px] tracking-wider mb-6 text-gray-950">
-              Pricelist for {currentCat.label}
-            </h3>
+              Pricelist for {currentCat.subLabel || currentCat.label}
+              </h3>
             <ul className="space-y-4 max-w-[85%] md:max-w-full w-full">
-              {currentCat.items.slice(6, 12).map((item) => (
+              {currentCat.items.slice(currentCat.splitAfter || 6).map((item) => (
                 <li key={item.name} className="flex justify-between items-end text-[13px] md:text-[14px] text-gray-900 font-['Poppins']">
                   <span className="pr-1 leading-tight max-w-[70%]">{item.name}</span>
                   <span className="flex-1 border-b border-gray-800/60 mx-1 mb-1"></span>
@@ -103,13 +98,10 @@ export default function Price() {
             </ul>
           </div>
 
-          {/* BLOK 2: FOTO KANAN BAWAH (order-1 di mobile) */}
-          {/* md:pr-12 membuat foto bergeser ke kiri (memberi ruang untuk panah kanan) */}
-          {/* md:pb-6 membuat foto agak ke atas agar proporsional */}
-          <div className="w-full h-[300px] md:h-[450px] p-6 md:pt-0 md:pb-6 md:pl-0 md:pr-12 order-1 md:order-2">
+          {/* BLOK 2: FOTO KANAN BAWAH */}
+          <div className="w-full h-[350px] md:h-[480px] p-6 md:pt-0 md:pb-6 md:pl-0 md:pr-12 order-1 md:order-2">
             <img 
-              src={`/assets/treatments/${currentCat.id}-banner2.png`}
-              onError={(e) => { e.target.src = 'https://picsum.photos/seed/nail2/600/500' }}
+              src={`/assets/price/${currentCat.id}-banner2.png`}
               alt={`${currentCat.label} 2`} 
               className="w-full h-full object-cover"
             />
@@ -118,7 +110,7 @@ export default function Price() {
         </div>
       </div>
 
-      {/* 3. PROMO SECTION (Square & Tanpa Stroke) */}
+      {/* 3. PROMO SECTION */}
       <section className="bg-transparent mb-12">
         <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="text-center mb-8">
@@ -129,9 +121,7 @@ export default function Price() {
           
           <div className="grid grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto">
             {promos.slice(0, 2).map((promo) => (
-              /* Menghapus border dan border-pink-200 */
               <div key={promo.title} className="bg-white rounded-2xl overflow-hidden shadow-md p-1.5 md:p-3">
-                {/* Mengubah aspect-[4/5] menjadi aspect-square agar fotonya kotak sempurna */}
                 <div className="w-full aspect-square bg-gray-100 rounded-xl overflow-hidden">
                   <img 
                     src={promo.img} 

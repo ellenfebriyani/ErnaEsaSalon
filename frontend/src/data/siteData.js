@@ -9,12 +9,12 @@ export const salon = {
   tagline: 'Enjoy The Best Beauty Care For You',
   owner: 'Erna Esayanti',
   address:
-    'Jl. Manggarai Utara 2 No.11-12, RT.9/RW.1, Manggarai, Kec. Tebet, Kota Jakarta Selatan, DKI Jakarta 12850',
-  hours: 'Senin – Minggu, 09.00 – 20.00 WIB',
+    'Jl. Manggarai Utara 2 No.11-12, RT.9/RW.1, Manggarai, Kec. Tebet, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12850.',
+  hours: 'Senin – Minggu\n09.00 AM - 20.00 PM',
   whatsapp: import.meta.env.VITE_SALON_WHATSAPP || '6285770594912',
   instagram: 'byernaesa',
   tiktok: 'byernaesa',
-  mapsEmbedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3117462446704!2d106.8533675757279!3d-6.222560860942544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3900609b787%3A0xb35a0980dfbe77b2!2sJl.%20Manggarai%20Utara%202%20No.11%2C%20RT.9%2FRW.1%2C%20Manggarai%2C%20Kec.%20Tebet%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012850!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid',
+  mapsEmbedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.392231905636!2d106.85330687355413!3d-6.211888960842976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5f2c703df27%3A0xdfff41cee60ec45b!2sErna%20Esa%20Studio!5e0!3m2!1sid!2sid!4v1783359572859!5m2!1sid!2sid',
   shopeeUrl: '#',
   tokopediaUrl: '#',
 }
@@ -25,9 +25,9 @@ export function waLink(message) {
 }
 
 export const team = [
-  { name: 'Alica', role: 'terapis', img: 'https://picsum.photos/seed/alica/300/300' },
-  { name: 'Depi', role: 'terapis', img: 'https://picsum.photos/seed/depi/300/300' },
-  { name: 'Rosita', role: 'terapis', img: 'https://picsum.photos/seed/rosita/300/300' },
+  { name: 'Alica', role: 'terapis' },
+  { name: 'Depi', role: 'terapis' },
+  { name: 'Rosita', role: 'terapis' },
 ]
 
 export const testimonials = [
@@ -221,92 +221,103 @@ export const serviceCategories = [
 ]
 
 // =========================================================================
-// ⭐️ NEW: 2. DATA KHUSUS UNTUK HALAMAN PRICE (Bisa diedit bebas tanpa merusak halaman Service)
+// ⭐️ NEW: 2. DATA KHUSUS UNTUK HALAMAN PRICE 
 // =========================================================================
 export const priceCategories = [
   {
     id: 'nail',
-    label: 'Nail',
+    label: 'Nail Treatment',
+    splitAfter: 6, // Nail akan dipotong setelah baris ke-6
     items: [
-      { name: 'Nail Extention + Manicure Gel Art', price: 175000 },
-      { name: 'Manicure Gel Art', price: 75000 },
+      { name: 'Spa Manicure', price: 50000 },
+      { name: 'Spa Pedicure', price: 125000 },
+      { name: 'Spa Pedicure Callus', price: 150000 },
       { name: 'Spa Pedicure Gel Polish', price: 150000 },
-      { name: 'SPA Menicure Pedicure + Callus', price: 250000 },
-      // Silakan tambah menu khusus pricelist halaman Price disini...
+      { name: 'Spa Menicure Pedicure', price: 150000 },
+      { name: 'Spa Menicure Pedicure Callus', price: 200000 },
+      { name: 'Spa Menicure + Gel Polish', price: 75000 },
+      
+      { name: 'Spa Menicure Pedicure + Gel Polish', price: 200000 }, 
+      { name: 'Spa Menicure Pedicure + Gel Polish + Callus', price: 250000 }, 
+      { name: 'Remove gel tangan/kaki', price: 30000 },
+      { name: 'Remove nail extention', price: 50000 },
+      { name: 'Add Art per jari', price: 5000 },
+      { name: 'Nail Art per jari', price: 10000 },
+      { name: 'Press On Nails', price: 45000 },
     ],
   },
   {
     id: 'eyelash',
     label: 'Eyelash',
+    splitAfter: 4,
     items: [
-      { name: 'Anime Lashes', price: 175000 },
-      { name: 'Russian Volume Mink Lashes', price: 300000 },
+      { name: 'Single mink lashes (Premium)', price: 150000 },
+      { name: 'Double mink lashes (Premium)', price: 200000 },
+      { name: 'Anime lashes (Premium)', price: 150000 },
+      { name: 'Russian Volume Mink Lashes(Premium)', price: 300000 },
+      { name: 'Single Silk Lashes', price: 100000 },
+      { name: 'Double Silk Lashes', price: 150000 },
       { name: 'Keratin Lashlift + Tint', price: 100000 },
-      { name: 'Double Mink Lashes', price: 200000 },
+      { name: 'Browbomber', price: 100000 },
+      { name: 'Threading', price: 30000 },
     ],
   },
   {
     id: 'sulam',
     label: 'Sulam',
+    subLabel: 'Face Treatment',
     items: [
+      { name: 'Sulam Alis Microblading', price: 500000 },
+      { name: 'Sulam Alis Shading', price: 500000 },
+      { name: 'Sulam Alis Misty Powder', price: 500000 },
       { name: 'Sulam Bibir + Free Retouch', price: 250000 },
-      { name: 'Sulam Alis Microblading + Shading', price: 500000 },
-      { name: 'Sulam eyeliner + free retouch', price: 500000 },
-      { name: 'Retouch Sulam Alis', price: 250000 },
+      { name: 'Sulam Eyeliner = Free Retouch', price: 500000 },
+      { name: 'Facial Acne', price: 100000 },
+      { name: 'Facial Brightening', price: 100000 },
+      { name: 'Facial Salmon DNA', price: 100000 },
+      { name: 'MTS Acne / Pori Besar', price: 300000 },
+      { name: 'MTS Brightening', price: 300000 },
+      
+      
+    ],
+  },
+  {
+    id: 'hair',
+    label: 'Hair Treatment',
+    subLabel: 'Tato & Tindik dll',
+    items: [
+      { name: 'Creambath + Catok/Blow', price: 60000 },
+      { name: 'Hair Mask + Catok/Blow', price: 60000 },
+      { name: 'Cuci Catok/Blow', price: 30000 },
+      { name: 'Hair Laser + Cuci Catok/Blow', price: 100000 },
+      { name: 'Hair Keratin Treatment', price: 250000 },
+      { name: 'Hair Smoothing', price: 25000 },
+      { name: 'Small Simple Tato (Tato Sulam)', price: 200000 },
+      { name: 'Tindik Telinga/Piercing per titik', price: 100000 },
+      { name: 'Make Up Free Hair do/Hijab', price: 200000 },
     ],
   },
   {
     id: 'waxing',
     label: 'Waxing',
+    splitAfter: 7,
+    subLabel: 'IPL',
     items: [
-      { name: 'Waxing Full Leg', price: 90000 },
+      { name: 'Waxing Underarm', price: 45000 },
+      { name: 'Waxing Half Arm', price: 55000 },
       { name: 'Waxing Full Arm', price: 70000 },
       { name: 'Waxing Half Leg', price: 75000 },
-      { name: 'Waxing Half Arm', price: 55000 },
-    ],
-  },
-  {
-    id: 'ipl',
-    label: 'IPL',
-    items: [
-      { name: 'IPL Hair Removal Full Arm', price: 100000 },
-      { name: 'IPL Hair Removal Full Face', price: 100000 },
-      { name: 'IPL Hair Removal Full Leg', price: 175000 },
-      { name: 'IPL Hair Removal Half Arm', price: 75000 },
-    ],
-  },
-  {
-    id: 'hair',
-    label: 'Hair',
-    items: [
-      { name: 'Hair Laser', price: 100000 },
-      { name: 'Hair Creambath Catok/Blow', price: 60000 },
-      { name: 'Hair Keratin Treatment', price: 250000 },
-      { name: 'Hair Smoothing', price: 200000 },
-    ],
-  },
-  {
-    id: 'underarm',
-    label: 'Underarm',
-    items: [
-      { name: 'Glow Armpit', price: 150000 },
-      { name: 'Waxing Underarm', price: 45000 },
-    ],
-  },
-  {
-    id: 'face',
-    label: 'Face Treatment',
-    items: [
-      { name: 'Facial Brightening/Acne', price: 100000 },
-      { name: 'MTS Acne / Pori Besar', price: 300000 },
-    ],
-  },
-  {
-    id: 'tato',
-    label: 'Tato & Tindik',
-    items: [
-      { name: 'Small Tato Sulam', price: 200000 },
-      { name: 'Tindik Telinga / Piercing', price: 100000 },
+      { name: 'Waxing Full Leg', price: 90000 },
+      { name: 'Waxing Bikini Line', price: 70000 },
+      { name: 'Waxing Brazilian', price: 100000 },
+      
+      { name: 'IPL Underarm', price: 50000 },
+      { name: 'IPL Half Arm', price: 75000 },
+      { name: 'IPL Full Arm', price: 100000 },
+      { name: 'IPL Half Leg', price: 150000 },
+      { name: 'IPL Full Leg', price: 175000 },
+      { name: 'IPL Full Face', price: 100000 },
+      { name: 'Glow Armpit (Mencerahkan Ketiak)', price: 150000 },
     ],
   },
 ]
@@ -362,17 +373,30 @@ export const galleryItems = [
 export const courseItems = [
   {
     name: 'Eyelash Extension Private Course',
-    price: 1500000,
+    price: 'IDR 1.500.000',
     features: [
-      '1 set primer',
-      'Eyelash trolley',
-      'Free snack',
-      'Free model',
-      'Free handout modul eyelash private course',
-      'Free sertifikat',
+      '2 hari private',
+      'materinya lengkap',
+      'free snack',
+      'free model',
+      'free konsultasi setelah proses private selesai',
+      'free sertifikat',
     ],
-    img: 'https://picsum.photos/seed/course-1/400/300',
+    img: "/assets/course-eyelash.png",
   },
+  {
+    name: 'Korean Eyebrow Embroidery Course',
+    price: 'IDR 5.000.000',
+    features: [
+      '2 hari private',
+      'materinya lengkap',
+      'free snack',
+      'free model',
+      'free konsultasi setelah proses private selesai',
+      'free sertifikat',
+    ],
+    img: "/assets/course-eyebrow.png", 
+  }
 ]
 
 export const productCategories = [
@@ -414,9 +438,14 @@ export const productCategories = [
   },
 ]
 
-export function formatRupiah(value) {
-  return 'Rp' + Number(value).toLocaleString('id-ID')
-}
+// GANTI FUNGSI formatRupiah LAMA DENGAN KODE INI:
+export const formatRupiah = (number) => {
+  if (number >= 1000) {
+    // Membagi angka dengan 1000 (misal: 200000 menjadi 200) lalu ditambah teks "rb"
+    return `${number / 1000}rb`; 
+  }
+  return number;
+};
 
 export function slugify(value) {
   return value

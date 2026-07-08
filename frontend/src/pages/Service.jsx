@@ -19,13 +19,28 @@ export default function Service() {
           {/* Jarak py-4 dibuat sedikit lebih longgar agar tombol terlihat lebih turun dan proposional */}
           <div className="flex justify-start md:justify-center gap-3 py-4">
             {serviceCategories.map((cat) => (
-              <a
+              <button
                 key={cat.id}
-                href={`#${cat.id}`}
-                className="flex-shrink-0 bg-[#B32650] hover:bg-[#58001C] text-white font-bold px-5 py-2 rounded-[3.5px] text-sm uppercase tracking-wider transition-colors shadow-sm"
+                onClick={() => {
+                  const element = document.getElementById(cat.id);
+                  if (element) {
+                    // Jarak kompensasi tinggi sticky navbar (atur nilai ini jika kurang turun/terlalu turun)
+                    const offset = 140; 
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementRect = element.getBoundingClientRect().top;
+                    const elementPosition = elementRect - bodyRect;
+                    const offsetPosition = elementPosition - offset;
+
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+                className="flex-shrink-0 bg-[#C84870] hover:bg-[#58001C] text-white font-bold px-5 py-2 rounded-[3.5px] text-sm uppercase tracking-wider transition-colors shadow-sm"
               >
                 {cat.label}
-              </a>
+              </button>
             ))}
           </div>
         </div>
