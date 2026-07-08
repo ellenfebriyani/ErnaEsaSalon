@@ -382,36 +382,36 @@ export const productCategories = [
     id: 'deodorant',
     label: 'Deodorant',
     items: [
-      { name: 'Wangi Teras Deodorant Spray (Bopo)', price: 15000, img: 'https://picsum.photos/seed/deo1/300/300' },
-      { name: 'Wangi Teras Deodorant Spray (Strawberry)', price: 15000, img: 'https://picsum.photos/seed/deo2/300/300' },
-      { name: 'Wangi Teras Deodorant Spray (Original)', price: 15000, img: 'https://picsum.photos/seed/deo3/300/300' },
+      { name: 'Wangi Teras Deodorant Spray (Kopi)', price: 'Rp. 15.000', img: "/assets/product/deodorant1-3.jpeg" },
+      { name: 'Wangi Teras Deodorant Spray (Strawberry)', price: 'Rp. 15.000', img: "/assets/product/deodorant2.jpeg" },
+      { name: 'Wangi Teras Deodorant Spray (Zwitsal)', price: 'Rp. 15.000', img: "/assets/product/deodorant1-3.jpeg" },
     ],
   },
   {
     id: 'pressnail',
     label: 'Press Nail',
     items: [
-      { name: 'Custom All Press On Nails', price: 45000, img: 'https://picsum.photos/seed/pn1/300/300' },
-      { name: 'Custom All Press On Nails (Set 2)', price: 45000, img: 'https://picsum.photos/seed/pn2/300/300' },
-      { name: 'Custom All Press On Nails (Set 3)', price: 45000, img: 'https://picsum.photos/seed/pn3/300/300' },
+      { name: 'Custom All Press On Nails', price: 'Rp. 45.000', img: "/assets/product/pressnail1.png" },
+      { name: 'Custom All Press On Nails', price: 'Rp. 45.000', img: "/assets/product/pressnail2.png" },
+      { name: 'Custom All Press On Nails', price: 'Rp. 45.000', img: "/assets/product/pressnail3.png" },
     ],
   },
   {
     id: 'bodycare',
     label: 'Body Care',
     items: [
-      { name: 'Wangi Teras Brightening Body Scrub', price: 20000, img: 'https://picsum.photos/seed/bc1/300/300' },
-      { name: 'Brightening Body Lotion + Triple Sunscreen', price: 26380, img: 'https://picsum.photos/seed/bc2/300/300' },
-      { name: 'Parfum Wangi Teras TDP Aroma Bunga Roll-On', price: 15000, img: 'https://picsum.photos/seed/bc3/300/300' },
+      { name: 'Wangi Teras Brightening Body Scrub', price: 'Rp. 20.000', img: "/assets/product/bodycare1.jpeg" },
+      { name: 'Brightening Body Lotion with Triple Sunscreen', price: 'Rp. 26.380', img: "/assets/product/bodycare2.jpeg" },
+      { name: 'Parfum Wangi Terus EDP Aroma Bunga dan Buah 10 ml', price: 'Rp. 15.000', img: "/assets/product/bodycare3.jpeg" },
     ],
   },
   {
     id: 'lainnya',
     label: 'Produk Lainnya',
     items: [
-      { name: 'Wangi Teras Glow Facemist', price: 25000, img: 'https://picsum.photos/seed/lain1/300/300' },
-      { name: 'Wangi Teras Hair Serum', price: 17500, img: 'https://picsum.photos/seed/lain2/300/300' },
-      { name: 'Wangi Teras Hair Growthbath', price: 15000, img: 'https://picsum.photos/seed/lain3/300/300' },
+      { name: 'Wangi Terus Glow Facemist', price: 'Rp. 25.000', img: "/assets/product/lainnya1.jpeg" },
+      { name: 'Wangi Terus Hair Serum', price: 'Rp. 17.500', img: "/assets/product/lainnya2.jpeg" },
+      { name: 'Wangi Terus Hair Creambath', price: 'Rp. 15.000', img: "/assets/product/lainnya3.jpeg" },
     ],
   },
 ]
