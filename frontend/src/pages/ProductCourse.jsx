@@ -204,7 +204,8 @@ export default function ProductCourse() {
           )}
         </div>
       ))}
-{/* ================= FOOTER SECTION ================= */}
+      
+      {/* ================= FOOTER SECTION ================= */}
       <footer className="bg-[#FF758F] text-gray-950 py-7 border-t border-pink-300 mt-auto">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center text-center md:text-left">
           {/* Kolom Kiri */}
