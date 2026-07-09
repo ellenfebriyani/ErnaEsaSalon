@@ -98,7 +98,7 @@ export default function BookAppointment() {
           {/* KOLOM KIRI: FOTO (Bentuk Kotak Siku) */}
           <div className="md:col-span-5 w-full h-[300px] md:h-full overflow-hidden shadow-sm">
             <img 
-              src="/assets/judul-about.png" 
+              src="/assets/book.png" 
               alt="Erna Esa Studio Asset" 
               className="w-full h-full object-cover"
             />
